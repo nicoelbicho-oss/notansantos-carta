@@ -1,0 +1,27 @@
+# Archivos de trabajo / extracción que no son del sitio
+notansantos-comidas-raw.json
+notansantos-vinos-raw.json
+notansantos-home-images.json
+notansantos-cat-images.json
+notansantos-cat-images-dom.json
+cat-images-found.json
+cat-images-vinos.json
+
+# Capturas usadas solo para análisis
+home-fullpage.jpg
+menu-landing.jpg
+
+# Playwright temp
+.playwright-mcp/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Notas internas
+PROXIMO-PROMPT.md
