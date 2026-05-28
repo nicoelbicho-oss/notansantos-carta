@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>No Tan Santos — maqueta v5</title>
+  <title>No Tan Santos — maqueta v6</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Italianno&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -24,12 +24,9 @@
 
     /* ============ SPLASH ============ */
     .splash {
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; min-height: 100dvh;
+      display: grid; grid-template-rows: auto 1fr auto;
+      position: relative; overflow: hidden;
       padding: 32px 20px 40px;
     }
     .splash::before {
@@ -48,15 +45,13 @@
     .splash > * { position: relative; z-index: 2; }
     .splash-top { display: flex; flex-direction: column; align-items: center; }
     .logo {
-      max-width: min(64vw, 460px);              /* Achicado en mobile (era 88vw) */
-      height: auto;
+      max-width: min(64vw, 460px); height: auto;
       filter: drop-shadow(0 6px 28px rgba(0,0,0,.85));
     }
     .splash-mid {
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       gap: 10px;
-      padding-top: 4vh;                          /* Cerca del logo, menos hueco */
-      padding-bottom: 4vh;
+      padding-top: 4vh; padding-bottom: 4vh;
     }
     .splash-kicker {
       font-family: 'Italianno', cursive;
@@ -109,10 +104,7 @@
     }
 
     /* ============ SECCIONES ============ */
-    .section {
-      padding: 56px 24px 16px;
-      max-width: 600px; margin: 0 auto;
-    }
+    .section { padding: 56px 24px 16px; max-width: 600px; margin: 0 auto; }
     .section-title {
       font-family: 'Italianno', cursive;
       font-size: clamp(64px, 14vw, 92px);
@@ -133,44 +125,16 @@
       box-shadow: 0 18px 60px rgba(0,0,0,.55);
     }
 
-    /* SUB-BODEGA (para vinos) */
-    .subseccion {
-      margin-top: 40px;
-      padding-top: 32px;
-      border-top: 1px solid var(--hairline);
-    }
-    .subseccion:first-child { margin-top: 0; border-top: none; padding-top: 0; }
-    .sub-image {
-      width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
-      border-radius: 2px; margin-bottom: 16px;
-      filter: brightness(.94);
-    }
-    .sub-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700; font-style: italic;
-      font-size: 26px;
-      color: var(--gold-bright);
-      text-align: center;
-      margin-bottom: 4px;
-    }
-    .sub-kicker {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 11px; letter-spacing: .3em;
-      color: var(--ink-dim); text-align: center;
-      margin-bottom: 18px;
-    }
-
-    /* SUB-MENÚ DENTRO DE SECCIÓN (ej: Tostados dentro de Café) */
+    /* Submenú dentro de sección (ej: Tostados dentro de Café) */
     .submenu-titulo {
       margin-top: 36px; margin-bottom: 14px;
       padding-top: 24px; border-top: 1px dashed var(--hairline);
       font-family: 'Cormorant Garamond', serif;
       font-weight: 600; font-style: italic;
-      font-size: 22px; color: var(--gold);
-      text-align: center;
+      font-size: 22px; color: var(--gold); text-align: center;
     }
 
-    /* ITEMS */
+    /* ============ ITEMS ============ */
     .items { margin-bottom: 24px; }
     .item {
       display: grid; grid-template-columns: 1fr auto;
@@ -182,10 +146,6 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 26px; font-weight: 600;
       color: var(--ink); line-height: 1.2;
-    }
-    .item .name .diet {
-      display: inline-flex; gap: 4px; margin-left: 8px;
-      font-size: 13px; vertical-align: middle;
     }
     .item .price {
       font-family: 'Cormorant Garamond', serif;
@@ -213,30 +173,26 @@
       vertical-align: middle;
     }
 
-    /* ===== ICONOS DE DIETA ===== */
+    /* iconos de dieta */
     .diet { display: inline-flex; gap: 5px; margin-left: 10px; vertical-align: middle; }
     .diet-icon {
       display: inline-flex; align-items: center; justify-content: center;
-      width: 30px; height: 30px;                /* MÁS GRANDES (era 22) */
-      border-radius: 50%;
-      border: 1.5px solid currentColor;
-      background: rgba(0,0,0,.2);
-      flex-shrink: 0;
+      width: 30px; height: 30px;
+      border-radius: 50%; border: 1.5px solid currentColor;
+      background: rgba(0,0,0,.2); flex-shrink: 0;
     }
     .diet-icon svg { width: 18px; height: 18px; display: block; }
     .diet-icon.veggie { color: #7bbf7b; }
     .diet-icon.vegan  { color: #5cb05c; }
-    .diet-icon.tacc   { color: #e8d090; }       /* color trigo como pediste */
+    .diet-icon.tacc   { color: #e8d090; }
 
-    /* ===== LEYENDA AL FINAL DE SECCIÓN ===== */
     .leyenda {
       margin-top: 28px; padding-top: 18px;
       border-top: 1px dashed var(--hairline);
       display: flex; flex-wrap: wrap; justify-content: center;
       gap: 16px 24px;
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: 16px;
-      color: var(--ink-dim);
+      font-style: italic; font-size: 16px; color: var(--ink-dim);
     }
     .leyenda-item { display: inline-flex; align-items: center; gap: 8px; }
 
@@ -259,16 +215,84 @@
         linear-gradient(180deg, var(--bg-warm) 0%, transparent 20%, transparent 80%, var(--bg) 100%);
     }
 
-    /* ===================================== */
-    /*  BOTÓN FLOTANTE "SALTAR A…"            */
-    /* ===================================== */
+    /* ============================================ */
+    /* VINOS Y TRAGOS — Grilla de bodegas + acordeón */
+    /* ============================================ */
+    .bodegas { max-width: 620px; margin: 0 auto; padding: 0 8px; }
+    .bodegas-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px; margin-bottom: 12px;
+    }
+    .bodega-card {
+      position: relative;
+      background: var(--bg-2);
+      border: 1px solid var(--hairline);
+      border-radius: 4px;
+      padding: 0; cursor: pointer; overflow: hidden;
+      text-align: left;
+      font-family: inherit; color: var(--ink);
+      transition: border-color .2s ease, transform .15s ease, background .25s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .bodega-card:hover { border-color: var(--gold); transform: translateY(-1px); }
+    .bodega-card.open {
+      border-color: var(--gold-bright);
+      background: var(--bg-warm);
+    }
+    .bodega-card img {
+      width: 100%; aspect-ratio: 4 / 3;
+      object-fit: cover; display: block;
+      filter: brightness(.92);
+    }
+    .bodega-card-name {
+      display: block;
+      padding: 12px 14px 14px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700; font-style: italic;
+      font-size: 19px; color: var(--ink); line-height: 1.15;
+    }
+    .bodega-card-chevron {
+      position: absolute; top: 8px; right: 8px;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(26,20,16,.78);
+      color: var(--gold-bright);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .35s ease, background .25s ease, color .25s ease;
+    }
+    .bodega-card-chevron svg { width: 16px; height: 16px; }
+    .bodega-card.open .bodega-card-chevron {
+      transform: rotate(180deg);
+      background: var(--gold); color: #1a1308;
+    }
+
+    .bodega-panel {
+      max-height: 0; overflow: hidden; opacity: 0;
+      background: var(--bg-warm);
+      border-radius: 4px;
+      transition: max-height .55s ease, opacity .35s ease, padding .4s ease, margin .4s ease;
+      padding: 0 18px;
+      margin-bottom: 0;
+    }
+    .bodega-panel.open {
+      max-height: 5000px; opacity: 1;
+      padding: 22px 20px 18px;
+      margin-bottom: 14px;
+    }
+    .bodega-tipo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700; font-style: italic;
+      font-size: 22px; color: var(--gold-bright);
+      margin: 24px 0 4px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .bodega-tipo:first-child { margin-top: 4px; }
+
+    /* ============ FAB + DRAWER ============ */
     .fab {
-      position: fixed;
-      right: 20px; bottom: 24px;
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: var(--gold);
-      color: #1a1308;
+      position: fixed; right: 20px; bottom: 24px;
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--gold); color: #1a1308;
       border: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       box-shadow: 0 12px 30px rgba(0,0,0,.6), 0 2px 6px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3);
@@ -290,22 +314,16 @@
     }
     .fab:hover .fab-label { opacity: 1; }
 
-    /* ===================================== */
-    /*  DRAWER (panel inferior con secciones) */
-    /* ===================================== */
     .backdrop {
       position: fixed; inset: 0;
       background: rgba(0,0,0,.55);
       backdrop-filter: blur(3px);
-      z-index: 100;
-      opacity: 0; pointer-events: none;
+      z-index: 100; opacity: 0; pointer-events: none;
       transition: opacity .25s ease;
     }
     .backdrop.open { opacity: 1; pointer-events: auto; }
-
     .drawer {
-      position: fixed;
-      left: 0; right: 0; bottom: 0;
+      position: fixed; left: 0; right: 0; bottom: 0;
       max-height: 82vh; overflow-y: auto;
       background: var(--bg-2);
       border-top: 2px solid var(--gold);
@@ -318,14 +336,13 @@
     }
     .drawer.open { transform: translateY(0); }
     .drawer-handle {
-      width: 50px; height: 5px; background: var(--gold-dim, #8a6f4d);
+      width: 50px; height: 5px; background: #8a6f4d;
       border-radius: 3px; margin: 8px auto 12px;
     }
     .drawer-title {
       font-family: 'Italianno', cursive;
       font-size: 38px; color: var(--gold-bright);
-      text-align: center; line-height: 1;
-      margin-bottom: 16px;
+      text-align: center; line-height: 1; margin-bottom: 16px;
     }
     .drawer-close {
       position: absolute; top: 14px; right: 14px;
@@ -343,17 +360,14 @@
     }
     .drawer-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; }
     .drawer-list a {
-      display: block;
-      padding: 14px 12px;
+      display: block; padding: 14px 12px;
       font-family: 'Cormorant Garamond', serif;
       font-size: 20px; color: var(--ink);
-      text-decoration: none;
-      border-radius: 4px;
+      text-decoration: none; border-radius: 4px;
       transition: background .15s ease, color .15s ease;
     }
     .drawer-list a:hover, .drawer-list a:active {
-      background: rgba(212,165,116,.12);
-      color: var(--gold-bright);
+      background: rgba(212,165,116,.12); color: var(--gold-bright);
     }
 
     /* ============ NOTA ============ */
@@ -465,8 +479,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Leyenda solo de iconos que aparecen en esta sección -->
     <div class="leyenda">
       <span class="leyenda-item">
         <span class="diet-icon vegan">
@@ -487,7 +499,7 @@
     </div>
   </section>
 
-  <!-- ============ GUARNICIONES Y ENSALADAS (combinada) ============ -->
+  <!-- ============ GUARNICIONES Y ENSALADAS ============ -->
   <section class="section" id="guarniciones">
     <h2 class="section-title">Guarniciones y Ensaladas</h2>
     <p class="section-desc">Para acompañar la parrilla o como plato liviano.</p>
@@ -551,8 +563,6 @@
         <div class="desc">Lechuga, rúcula, zanahoria, huevo, tomate, cebolla.</div>
       </div>
     </div>
-
-    <!-- Leyenda solo de los iconos que aparecen en esta sección -->
     <div class="leyenda">
       <span class="leyenda-item">
         <span class="diet-icon veggie">
@@ -584,63 +594,7 @@
   <!-- ============ INTERLUDIO ============ -->
   <div class="virgen-interlude"></div>
 
-  <!-- ============ VINOS — TINTOS con sub-bodegas ============ -->
-  <section class="section" id="tintos">
-    <h2 class="section-title">Tintos</h2>
-    <p class="section-desc">Malbec, cabernet, blends y bonardas. Por bodega.</p>
-
-    <!-- Sub-bodega 1 -->
-    <div class="subseccion">
-      <img src="imagenes/categorias-vinos/catena-zapata.jpg" alt="" class="sub-image">
-      <div class="sub-title">Bodega Catena Zapata</div>
-      <div class="sub-kicker">— Mendoza —</div>
-      <div class="items">
-        <div class="item">
-          <div class="name">Angélica Zapata Malbec Alta</div>
-          <div class="price">$43.000</div>
-        </div>
-        <div class="item">
-          <div class="name">D.V. Catena Malbec-Cabernet</div>
-          <div class="price">$25.000</div>
-        </div>
-        <div class="item">
-          <div class="name">Saint Felicien Malbec</div>
-          <div class="price">$19.000</div>
-        </div>
-        <div class="item">
-          <div class="name">Álamos Malbec</div>
-          <div class="price">$14.000</div>
-        </div>
-        <div class="item">
-          <div class="name">Copa Álamos Malbec</div>
-          <div class="price">$5.000</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sub-bodega 2 -->
-    <div class="subseccion">
-      <img src="imagenes/categorias-vinos/luigi-bosca.jpg" alt="" class="sub-image">
-      <div class="sub-title">Bodega Luigi Bosca</div>
-      <div class="sub-kicker">— Mendoza —</div>
-      <div class="items">
-        <div class="item">
-          <div class="name">Luigi Bosca de Sangre Malbec DOC</div>
-          <div class="price">$42.000</div>
-        </div>
-        <div class="item">
-          <div class="name">Luigi Bosca Malbec</div>
-          <div class="price">$26.000</div>
-        </div>
-        <div class="item">
-          <div class="name">Finca La Linda Malbec</div>
-          <div class="price">$17.000</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CAFÉ (con Tostados como sub-menú) ============ -->
+  <!-- ============ CAFÉ ============ -->
   <section class="section" id="cafe">
     <h2 class="section-title">Café</h2>
     <p class="section-desc">Para el cierre o el medio de la tarde.</p>
@@ -652,8 +606,6 @@
       <div class="item"><div class="name">Té</div><div class="price">$4.000</div></div>
       <div class="item"><div class="name">Submarino</div><div class="price">$6.000</div></div>
     </div>
-
-    <!-- Sub-menú Tostados -->
     <div class="submenu-titulo">— Para acompañar —</div>
     <div class="items">
       <div class="item"><div class="name">Tostado de Jamón y Queso</div><div class="price">$6.500</div></div>
@@ -661,28 +613,376 @@
     </div>
   </section>
 
+  <!-- ============================================ -->
+  <!-- VINOS Y TRAGOS — Grilla 2 col + acordeón     -->
+  <!-- ============================================ -->
+  <section class="section" id="vinos">
+    <h2 class="section-title">Vinos y Tragos</h2>
+    <p class="section-desc">Bodegas argentinas, espumantes, cócteles y tragos. Tocá una tarjeta para abrir su carta.</p>
+
+    <div class="bodegas">
+
+      <!-- Fila 1 — Catena Zapata · Luigi Bosca -->
+      <div class="bodegas-row">
+        <button class="bodega-card" data-target="catena" aria-controls="bod-catena" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/catena-zapata.jpg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Catena Zapata</span>
+        </button>
+        <button class="bodega-card" data-target="luigi" aria-controls="bod-luigi" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/luigi-bosca.jpg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Luigi Bosca</span>
+        </button>
+      </div>
+      <div class="bodega-panel" id="bod-catena">
+        <div class="bodega-tipo">Tintos</div>
+        <div class="items">
+          <div class="item"><div class="name">Angélica Zapata Malbec Alta</div><div class="price">$43.000</div></div>
+          <div class="item"><div class="name">Angélica Zapata Cabernet Franc Alta</div><div class="price">$39.000</div></div>
+          <div class="item"><div class="name">D.V. Catena Malbec-Cabernet</div><div class="price">$25.000</div></div>
+          <div class="item"><div class="name">Saint Felicien Malbec</div><div class="price">$19.000</div></div>
+          <div class="item"><div class="name">Saint Felicien Cabernet</div><div class="price">$19.000</div></div>
+          <div class="item"><div class="name">Saint Felicien Cabernet Franc</div><div class="price">$19.000</div></div>
+          <div class="item"><div class="name">Álamos Malbec</div><div class="price">$14.000</div></div>
+          <div class="item"><div class="name">Álamos Cabernet</div><div class="price">$14.000</div></div>
+        </div>
+        <div class="bodega-tipo">Blancos</div>
+        <div class="items">
+          <div class="item"><div class="name">D.V. Catena Chardonnay</div><div class="price">$29.000</div></div>
+          <div class="item"><div class="name">Saint Felicien Chardonnay</div><div class="price">$19.000</div></div>
+          <div class="item"><div class="name">Álamos Sauvignon Blanc</div><div class="price">$14.000</div></div>
+          <div class="item"><div class="name">Álamos Chardonnay</div><div class="price">$14.000</div></div>
+        </div>
+        <div class="bodega-tipo">Por copa</div>
+        <div class="items">
+          <div class="item"><div class="name">Copa Álamos Malbec</div><div class="price">$5.000</div></div>
+        </div>
+      </div>
+      <div class="bodega-panel" id="bod-luigi">
+        <div class="bodega-tipo">Tintos</div>
+        <div class="items">
+          <div class="item"><div class="name">Luigi Bosca de Sangre Malbec DOC</div><div class="price">$42.000</div></div>
+          <div class="item"><div class="name">Luigi Bosca Malbec</div><div class="price">$26.000</div></div>
+          <div class="item"><div class="name">Luigi Bosca Cabernet</div><div class="price">$26.000</div></div>
+          <div class="item"><div class="name">Finca La Linda Malbec</div><div class="price">$17.000</div></div>
+          <div class="item"><div class="name">Finca La Linda Cabernet</div><div class="price">$17.000</div></div>
+        </div>
+        <div class="bodega-tipo">Rosados</div>
+        <div class="items">
+          <div class="item"><div class="name">Luigi Bosca Rosé</div><div class="price">$28.500</div></div>
+        </div>
+        <div class="bodega-tipo">Blancos</div>
+        <div class="items">
+          <div class="item"><div class="name">Luigi Bosca Chardonnay</div><div class="price">$26.000</div></div>
+          <div class="item"><div class="name">Finca La Linda Chardonnay</div><div class="price">$17.000</div></div>
+        </div>
+      </div>
+
+      <!-- Fila 2 — Nieto Senetiner · Ruca Malen -->
+      <div class="bodegas-row">
+        <button class="bodega-card" data-target="nieto" aria-controls="bod-nieto" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/nieto-senetiner.jpg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Nieto Senetiner</span>
+        </button>
+        <button class="bodega-card" data-target="ruca" aria-controls="bod-ruca" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/ruca-malen.jpg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Ruca Malen</span>
+        </button>
+      </div>
+      <div class="bodega-panel" id="bod-nieto">
+        <div class="bodega-tipo">Tintos</div>
+        <div class="items">
+          <div class="item"><div class="name">Don Nicanor Malbec</div><div class="price">$21.000</div></div>
+          <div class="item"><div class="name">Don Nicanor Cabernet</div><div class="price">$21.000</div></div>
+          <div class="item"><div class="name">Reserva Malbec DOC</div><div class="price">$16.000</div></div>
+          <div class="item"><div class="name">NS Blend Collection MK · Cab Franc · P. Verdot</div><div class="price">$12.500</div></div>
+          <div class="item">
+            <div class="name">Nieto Senetiner Malbec</div>
+            <div class="price">$12.500</div>
+            <div class="variants"><span>750cc <b>$12.500</b></span><span>375cc <b>$8.000</b></span></div>
+          </div>
+          <div class="item"><div class="name">Nieto Senetiner Cabernet</div><div class="price">$12.500</div></div>
+          <div class="item"><div class="name">Nieto Senetiner Pinot Noir</div><div class="price">$12.500</div></div>
+          <div class="item"><div class="name">Nieto Senetiner Bonarda</div><div class="price">$12.500</div></div>
+          <div class="item"><div class="name">Emilia Malbec</div><div class="price">$10.000</div></div>
+          <div class="item"><div class="name">Emilia Cabernet</div><div class="price">$10.000</div></div>
+          <div class="item">
+            <div class="name">Benjamín Nieto Malbec</div>
+            <div class="price">$7.500</div>
+            <div class="variants"><span>750cc <b>$7.500</b></span><span>375cc <b>$5.500</b></span></div>
+          </div>
+          <div class="item"><div class="name">Benjamín Nieto Cabernet</div><div class="price">$7.500</div></div>
+        </div>
+        <div class="bodega-tipo">Rosados</div>
+        <div class="items">
+          <div class="item"><div class="name">Nieto Senetiner Rosé</div><div class="price">$12.500</div></div>
+        </div>
+        <div class="bodega-tipo">Blancos</div>
+        <div class="items">
+          <div class="item"><div class="name">Nieto Senetiner Chardonnay</div><div class="price">$12.500</div></div>
+          <div class="item"><div class="name">Emilia Chardonnay</div><div class="price">$10.000</div></div>
+          <div class="item"><div class="name">Benjamín Nieto Chardonnay</div><div class="price">$7.500</div></div>
+        </div>
+        <div class="bodega-tipo">Dulces</div>
+        <div class="items">
+          <div class="item"><div class="name">Emilia Dulce</div><div class="price">$10.000</div></div>
+        </div>
+        <div class="bodega-tipo">Por copa</div>
+        <div class="items">
+          <div class="item"><div class="name">Copa Don Nicanor</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Copa Nieto Senetiner</div><div class="price">$5.000</div></div>
+        </div>
+      </div>
+      <div class="bodega-panel" id="bod-ruca">
+        <div class="bodega-tipo">Tintos</div>
+        <div class="items">
+          <div class="item"><div class="name">Capítulo 2 Malbec</div><div class="price">$22.000</div></div>
+          <div class="item"><div class="name">Capítulo 2 Cabernet Franc</div><div class="price">$22.000</div></div>
+          <div class="item"><div class="name">Capítulo 2 Pinot Noir</div><div class="price">$22.000</div></div>
+          <div class="item"><div class="name">Capítulo 1 Malbec</div><div class="price">$12.500</div></div>
+          <div class="item"><div class="name">Capítulo 1 Cabernet</div><div class="price">$12.500</div></div>
+        </div>
+        <div class="bodega-tipo">Blancos</div>
+        <div class="items">
+          <div class="item"><div class="name">Capítulo 1 Chardonnay</div><div class="price">$12.500</div></div>
+        </div>
+        <div class="bodega-tipo">Por copa</div>
+        <div class="items">
+          <div class="item"><div class="name">Copa Ruca Malen Capítulo 1 Malbec</div><div class="price">$5.000</div></div>
+        </div>
+      </div>
+
+      <!-- Fila 3 — Viña Cobos · Cadus -->
+      <div class="bodegas-row">
+        <button class="bodega-card" data-target="cobos" aria-controls="bod-cobos" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/vina-cobos.jpg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Viña Cobos</span>
+        </button>
+        <button class="bodega-card" data-target="cadus" aria-controls="bod-cadus" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/cadus.jpg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Cadus</span>
+        </button>
+      </div>
+      <div class="bodega-panel" id="bod-cobos">
+        <div class="bodega-tipo">Tintos</div>
+        <div class="items">
+          <div class="item"><div class="name">Bramare Malbec</div><div class="price">$60.000</div></div>
+          <div class="item"><div class="name">Cocodrilo Malbec</div><div class="price">$50.000</div></div>
+          <div class="item"><div class="name">Felino Malbec</div><div class="price">$29.000</div></div>
+          <div class="item"><div class="name">Felinos Cabernet</div><div class="price">$29.000</div></div>
+        </div>
+        <div class="bodega-tipo">Blancos</div>
+        <div class="items">
+          <div class="item"><div class="name">Felino Chardonnay</div><div class="price">$29.000</div></div>
+        </div>
+        <div class="bodega-tipo">Por copa</div>
+        <div class="items">
+          <div class="item"><div class="name">Copa Felinos Malbec</div><div class="price">$11.000</div></div>
+        </div>
+      </div>
+      <div class="bodega-panel" id="bod-cadus">
+        <div class="bodega-tipo">Tintos</div>
+        <div class="items">
+          <div class="item"><div class="name">CD App Malbec</div><div class="price">$35.000</div></div>
+        </div>
+      </div>
+
+      <!-- Fila 4 — Finca Las Moras · San Huberto -->
+      <div class="bodegas-row">
+        <button class="bodega-card" data-target="lasmoras" aria-controls="bod-lasmoras" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/las-moras.png" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Finca Las Moras</span>
+        </button>
+        <button class="bodega-card" data-target="huberto" aria-controls="bod-huberto" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/san-huberto.jpg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">San Huberto</span>
+        </button>
+      </div>
+      <div class="bodega-panel" id="bod-lasmoras">
+        <div class="bodega-tipo">Tintos</div>
+        <div class="items">
+          <div class="item"><div class="name">Los Intocables Malbec</div><div class="price">$14.000</div></div>
+          <div class="item"><div class="name">Alma Mora Malbec</div><div class="price">$9.500</div></div>
+          <div class="item"><div class="name">Alma Mora Cabernet</div><div class="price">$9.500</div></div>
+        </div>
+        <div class="bodega-tipo">Rosados</div>
+        <div class="items">
+          <div class="item"><div class="name">Alma Mora Rosado</div><div class="price">$9.500</div></div>
+        </div>
+        <div class="bodega-tipo">Blancos</div>
+        <div class="items">
+          <div class="item"><div class="name">Alma Mora Chardonnay</div><div class="price">$9.500</div></div>
+        </div>
+      </div>
+      <div class="bodega-panel" id="bod-huberto">
+        <div class="bodega-tipo">Tintos</div>
+        <div class="items">
+          <div class="item"><div class="name">Gran Nina Malbec</div><div class="price">$22.000</div></div>
+          <div class="item"><div class="name">Gran Nina Petit Verdot</div><div class="price">$22.000</div></div>
+          <div class="item"><div class="name">Gran Nina Cabernet Franc</div><div class="price">$22.000</div></div>
+          <div class="item"><div class="name">Roble Malbec</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Roble Cabernet</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Roble Merlot</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Malbec</div><div class="price">$7.000</div></div>
+          <div class="item"><div class="name">Cabernet</div><div class="price">$7.000</div></div>
+        </div>
+        <div class="bodega-tipo">Blancos</div>
+        <div class="items">
+          <div class="item"><div class="name">Roble Chardonnay</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Chardonnay</div><div class="price">$7.000</div></div>
+        </div>
+        <div class="bodega-tipo">Dulces</div>
+        <div class="items">
+          <div class="item"><div class="name">Nina Malbec Dulce Natural</div><div class="price">$14.000</div></div>
+        </div>
+        <div class="bodega-tipo">Por copa</div>
+        <div class="items">
+          <div class="item"><div class="name">Copa</div><div class="price">$3.500</div></div>
+          <div class="item"><div class="name">Copa Nina Gold Petit Verdot</div><div class="price">$4.000</div></div>
+        </div>
+      </div>
+
+      <!-- Fila 5 — Trapiche · Espumantes -->
+      <div class="bodegas-row">
+        <button class="bodega-card" data-target="trapiche" aria-controls="bod-trapiche" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/trapiche.jpg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Trapiche</span>
+        </button>
+        <button class="bodega-card" data-target="espumantes" aria-controls="bod-espumantes" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/espumantes.png" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Espumantes</span>
+        </button>
+      </div>
+      <div class="bodega-panel" id="bod-trapiche">
+        <div class="bodega-tipo">Tintos</div>
+        <div class="items">
+          <div class="item"><div class="name">Trapiche Reserva Malbec</div><div class="price">$15.000</div></div>
+        </div>
+      </div>
+      <div class="bodega-panel" id="bod-espumantes">
+        <div class="bodega-tipo">Espumantes</div>
+        <div class="items">
+          <div class="item"><div class="name">Saint Felicien Nature</div><div class="price">$28.000</div></div>
+          <div class="item"><div class="name">Luigi Bosca</div><div class="price">$32.000</div></div>
+          <div class="item"><div class="name">Nieto Senetiner Brut Nature</div><div class="price">$20.000</div></div>
+          <div class="item"><div class="name">Nieto Senetiner Extra Brut</div><div class="price">$18.000</div></div>
+          <div class="item"><div class="name">Emilia Espumante</div><div class="price">$14.500</div></div>
+        </div>
+        <div class="bodega-tipo">Por copa</div>
+        <div class="items">
+          <div class="item"><div class="name">Copa</div><div class="price">$2.500</div></div>
+        </div>
+      </div>
+
+      <!-- Fila 6 — Cocktails Emilia · Tragos -->
+      <div class="bodegas-row">
+        <button class="bodega-card" data-target="emilia" aria-controls="bod-emilia" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/emilia-cocktail.jpeg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Cocktails Emilia</span>
+        </button>
+        <button class="bodega-card" data-target="tragos" aria-controls="bod-tragos" aria-expanded="false">
+          <img src="imagenes/categorias-vinos/tragos.jpg" alt="">
+          <span class="bodega-card-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <span class="bodega-card-name">Tragos</span>
+        </button>
+      </div>
+      <div class="bodega-panel" id="bod-emilia">
+        <div class="bodega-tipo">Cocktails</div>
+        <div class="items">
+          <div class="item"><div class="name">Cocktail Emilia Clarea</div><div class="price">$11.000</div></div>
+          <div class="item"><div class="name">Cocktail Emilia Rosé</div><div class="price">$11.000</div></div>
+          <div class="item"><div class="name">Cocktail Emilia Sangría</div><div class="price">$11.000</div></div>
+          <div class="item"><div class="name">Cocktail Emilia Spritz</div><div class="price">$11.000</div></div>
+        </div>
+      </div>
+      <div class="bodega-panel" id="bod-tragos">
+        <div class="bodega-tipo">Aperitivos & vermouths</div>
+        <div class="items">
+          <div class="item"><div class="name">Campari con naranja</div><div class="price">$7.000</div></div>
+          <div class="item"><div class="name">Campari Tonic</div><div class="price">$7.000</div></div>
+          <div class="item"><div class="name">Cynar</div><div class="price">$7.000</div></div>
+          <div class="item"><div class="name">Martini</div><div class="price">$7.000</div></div>
+          <div class="item"><div class="name">Cinzano</div><div class="price">$7.000</div></div>
+          <div class="item"><div class="name">Fernet con coca</div><div class="price">$7.000</div></div>
+        </div>
+        <div class="bodega-tipo">Cocktails clásicos</div>
+        <div class="items">
+          <div class="item"><div class="name">Negroni</div><div class="price">$8.500</div></div>
+          <div class="item"><div class="name">Aperol Spritz</div><div class="price">$8.500</div></div>
+          <div class="item"><div class="name">Mojito</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Daikiri Maracuyá</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Cuba Libre</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Caipiroska</div><div class="price">$7.500</div></div>
+          <div class="item"><div class="name">Limonada Mareada</div><div class="price">$7.000</div></div>
+          <div class="item"><div class="name">Jarra de sangría</div><div class="price">$10.500</div></div>
+        </div>
+        <div class="bodega-tipo">Whiskies</div>
+        <div class="items">
+          <div class="item"><div class="name">Whisky JB</div><div class="price">$4.500</div></div>
+          <div class="item">
+            <div class="name">Whisky JW Red Label</div>
+            <div class="price">$6.000</div>
+            <div class="variants"><span>Medida <b>$6.000</b></span><span>Botella <b>$45.000</b></span></div>
+          </div>
+          <div class="item">
+            <div class="name">Whisky JW Black Label</div>
+            <div class="price">$9.000</div>
+            <div class="variants"><span>Medida <b>$9.000</b></span><span>Botella <b>$90.000</b></span></div>
+          </div>
+          <div class="item"><div class="name">Whisky JW Double Black</div><div class="price">$10.000</div></div>
+          <div class="item"><div class="name">Whisky JW Blue Label</div><div class="price">$45.000</div></div>
+        </div>
+        <div class="bodega-tipo">Vodkas, gins y otros</div>
+        <div class="items">
+          <div class="item"><div class="name">Vodka</div><div class="price">$7.000</div></div>
+          <div class="item"><div class="name">Vodka Absolut</div><div class="price">$9.000</div></div>
+          <div class="item"><div class="name">Gin</div><div class="price">$7.500</div></div>
+          <div class="item"><div class="name">Gin con frutos rojos</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Gin Beefeater</div><div class="price">$9.000</div></div>
+          <div class="item"><div class="name">Tequila</div><div class="price">$5.000</div></div>
+          <div class="item"><div class="name">Sambuca</div><div class="price">$4.500</div></div>
+          <div class="item"><div class="name">Baileys</div><div class="price">$8.000</div></div>
+          <div class="item"><div class="name">Tía María</div><div class="price">$6.500</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ============ NOTA ============ -->
   <div class="nota">
-    <b>v5 — todo lo que arreglamos:</b>
+    <b>v6 — Vinos reorganizados por bodega + acordeón:</b>
     <ul>
-      <li><b>Botón flotante "Saltar a…"</b> abajo a la derecha (dorado). Tocalo para ver el panel con todas las secciones.</li>
-      <li>Quitadas las etiquetas "Opción A/B/C" — ya elegiste Italianno.</li>
-      <li><b>Guarniciones y Ensaladas</b> ahora son una sola sección.</li>
-      <li><b>Café</b> incluye los "tostados / un toque" como sub-menú adentro (mirá al final de la sección Café).</li>
-      <li><b>Vinos por tipo</b>: te muestro "Tintos" con sub-bodegas (Catena Zapata, Luigi Bosca) con foto de bodega. Mismo patrón se replica en Blancos y Espumantes.</li>
-      <li><b>Costillar</b> tiene una etiqueta dorada chiquita "Vie · Sáb · Dom".</li>
-      <li><b>Iconos de dieta nuevos</b>: hojita verde (vegetariano), sprout verde fuerte (vegano), <b>trigo tachado en color trigo</b> (sin gluten / apto celíacos). Más grandes y con leyenda al final de cada sección donde aparecen.</li>
+      <li>Logo del splash más chico en mobile y "Bienvenidos" pegado.</li>
+      <li><b>Vinos y Tragos</b>: ahora es una grilla de 12 tarjetas en 2 columnas (9 bodegas + Espumantes + Cocktails Emilia + Tragos).</li>
+      <li>Tocás una tarjeta y <b>se despliega abajo con animación</b> mostrando los vinos agrupados por <i>Tintos · Rosados · Blancos · Dulces · Por copa</i>.</li>
+      <li>Tocás otra → cierra la actual y abre la nueva. Tocás la misma de vuelta → la cierra.</li>
+      <li>El chevron arriba a la derecha de la tarjeta gira 180° cuando está abierta.</li>
+      <li>Los tragos van organizados en sub-grupos: <i>Aperitivos · Cocktails clásicos · Whiskies · Vodkas/Gins/Otros</i> — la sección original era una lista plana de 28 ítems, esto se lee mucho mejor.</li>
     </ul>
     <br>
-    <b>Estructura final de la carta (15 secciones, antes 24):</b><br>
-    <i>Comidas:</i> Entradas · Parrilla · Guarniciones y Ensaladas · Minutas · Especiales · Sandwiches · Pastas · Bebidas y Cervezas · Postres · Café (+ tostados)<br>
-    <i>Bebidas:</i> Tintos (5 bodegas) · Blancos (varias) · Espumantes · Cocktail Emilia · Tragos<br><br>
-    <b>Tocá el botón dorado abajo a la derecha</b> para probar el panel. Si está, cierro la maqueta y arranco con el repo + carta completa.
+    <b>Decisiones tomadas que conviene confirmar:</b>
+    <ul>
+      <li>Los <b>espumantes</b> quedan SÓLO en la tarjeta "Espumantes" (no se duplican dentro de cada bodega) — más limpio para mantener.</li>
+      <li>Los <b>rosados</b> quedan dentro de cada bodega como sub-grupo "Rosados" (Luigi Bosca, Nieto Senetiner, Alma Mora).</li>
+      <li>Las <b>copas</b> sueltas (Copa Álamos, Copa Don Nicanor, etc.) van dentro de cada bodega como sub-grupo "Por copa".</li>
+      <li>Capitalización normalizada (en la carta vieja había "hamburguesa casera" vs "Hamburguesa casera completa", etc.).</li>
+    </ul>
+    <br>
+    Si la sensación de la grilla + acordeón te gusta, próximo paso: <b>migrar a Astro</b>, agregar las secciones que faltan (Entradas, Minutas, Especiales, Sandwiches, Pastas, Bebidas, Postres) y dejarla lista para Vercel.
   </div>
 
-  <!-- ============================================ -->
-  <!-- BOTÓN FLOTANTE Y DRAWER                       -->
-  <!-- ============================================ -->
+  <!-- ============ FAB + DRAWER ============ -->
   <button class="fab" id="fab" aria-label="Saltar a sección">
     <span class="fab-label">Saltar a…</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -718,34 +1018,57 @@
     <div class="drawer-group">
       <div class="drawer-group-title">— VINOS Y TRAGOS —</div>
       <div class="drawer-list">
-        <a href="#tintos">Tintos</a>
-        <a href="#blancos">Blancos</a>
-        <a href="#espumantes">Espumantes</a>
-        <a href="#cocktail">Cocktail Emilia</a>
-        <a href="#tragos">Tragos</a>
+        <a href="#vinos">Ver bodegas</a>
       </div>
     </div>
   </nav>
 
   <script>
+    // === Drawer (botón flotante) ===
     const fab = document.getElementById('fab');
     const drawer = document.getElementById('drawer');
     const backdrop = document.getElementById('backdrop');
     const close = document.getElementById('drawerClose');
 
-    function open() { drawer.classList.add('open'); backdrop.classList.add('open'); }
-    function shut() { drawer.classList.remove('open'); backdrop.classList.remove('open'); }
+    function openDrawer() { drawer.classList.add('open'); backdrop.classList.add('open'); }
+    function shutDrawer() { drawer.classList.remove('open'); backdrop.classList.remove('open'); }
 
-    fab.addEventListener('click', open);
-    backdrop.addEventListener('click', shut);
-    close.addEventListener('click', shut);
-    // cerrar al elegir una sección
-    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', shut));
-    // ESC también
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') shut(); });
+    fab.addEventListener('click', openDrawer);
+    backdrop.addEventListener('click', shutDrawer);
+    close.addEventListener('click', shutDrawer);
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', shutDrawer));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') shutDrawer(); });
 
-    // Smooth scroll en el anchor con un pequeño offset (opcional)
     document.documentElement.style.scrollBehavior = 'smooth';
+
+    // === Acordeón de bodegas ===
+    document.querySelectorAll('.bodega-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const target = card.dataset.target;
+        const panel = document.getElementById('bod-' + target);
+        const wasOpen = panel.classList.contains('open');
+
+        // Cerrar todos los paneles abiertos
+        document.querySelectorAll('.bodega-panel.open').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.bodega-card.open').forEach(c => {
+          c.classList.remove('open');
+          c.setAttribute('aria-expanded', 'false');
+        });
+
+        // Si la tarjeta clickeada NO estaba abierta, abrirla
+        if (!wasOpen) {
+          panel.classList.add('open');
+          card.classList.add('open');
+          card.setAttribute('aria-expanded', 'true');
+          // Pequeño scroll para que se vea el panel
+          setTimeout(() => {
+            const rect = card.getBoundingClientRect();
+            const offset = window.pageYOffset + rect.top - 80;
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }, 150);
+        }
+      });
+    });
   </script>
 
 </body>
