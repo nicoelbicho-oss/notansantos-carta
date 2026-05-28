@@ -1,0 +1,49 @@
+---
+type Props = { dietas: string[] };
+const { dietas } = Astro.props as Props;
+const has = (k: string) => dietas.includes(k);
+---
+{dietas.length > 0 && (
+  <div class="leyenda">
+    {has('veggie') && (
+      <span class="leyenda-item">
+        <span class="diet-icon veggie">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18 C 6 8, 14 4, 20 4 C 20 12, 16 18, 6 18 Z"/>
+            <path d="M6 18 L 14 10"/>
+          </svg>
+        </span>
+        Vegetariano
+      </span>
+    )}
+    {has('vegano') && (
+      <span class="leyenda-item">
+        <span class="diet-icon vegan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21V11"/>
+            <path d="M12 11 C8 11 4 8 4 4 C9 4 12 7 12 11 Z"/>
+            <path d="M12 11 C16 11 20 8 20 4 C15 4 12 7 12 11 Z"/>
+          </svg>
+        </span>
+        Vegano
+      </span>
+    )}
+    {has('tacc') && (
+      <span class="leyenda-item">
+        <span class="diet-icon tacc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v17"/>
+            <path d="M12 8c-2 0 -3 -1.5 -3.5 -3.5"/>
+            <path d="M12 8c2 0 3 -1.5 3.5 -3.5"/>
+            <path d="M12 12c-2 0 -3 -1.5 -3.5 -3.5"/>
+            <path d="M12 12c2 0 3 -1.5 3.5 -3.5"/>
+            <path d="M12 16c-2 0 -3 -1.5 -3.5 -3.5"/>
+            <path d="M12 16c2 0 3 -1.5 3.5 -3.5"/>
+            <line x1="5" y1="5" x2="19" y2="19" stroke-width="2.2"/>
+          </svg>
+        </span>
+        Sin gluten (apto celíacos)
+      </span>
+    )}
+  </div>
+)}

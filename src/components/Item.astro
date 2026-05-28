@@ -1,0 +1,31 @@
+---
+import DietIcons from './DietIcons.astro';
+
+type Variante = { label: string; precio: string };
+type ItemData = {
+  nombre: string;
+  precio?: string;
+  descripcion?: string;
+  variantes?: Variante[];
+  dieta?: string[];
+  tag?: string;
+};
+const { item } = Astro.props as { item: ItemData };
+const mostrarPrecio = item.precio || (item.variantes && item.variantes[0]?.precio) || '';
+---
+<div class="item">
+  <div class="name">
+    {item.nombre}
+    {item.tag && <span class="tag-finde">{item.tag}</span>}
+    <DietIcons dieta={item.dieta} />
+  </div>
+  <div class="price">{mostrarPrecio}</div>
+  {item.descripcion && <div class="desc">{item.descripcion}</div>}
+  {item.variantes && item.variantes.length > 0 && (
+    <div class="variants">
+      {item.variantes.map((v) => (
+        <span>{v.label} <b>{v.precio}</b></span>
+      ))}
+    </div>
+  )}
+</div>

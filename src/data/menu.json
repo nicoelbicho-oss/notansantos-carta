@@ -1,0 +1,527 @@
+{
+  "cubierto": "$3.000",
+
+  "comidas": [
+    {
+      "id": "entradas",
+      "nombre": "Entradas",
+      "bajada": "Para arrancar — clásicos de parrilla y picadas.",
+      "imagen": "/imagenes/categorias-comidas/entradas.jpg",
+      "items": [
+        { "nombre": "Chorizo", "precio": "$6.500" },
+        { "nombre": "Morcilla", "precio": "$6.500" },
+        { "nombre": "Mollejas", "precio": "$34.000" },
+        { "nombre": "Riñón", "precio": "$11.000" },
+        { "nombre": "Chinchulines", "precio": "$11.000" },
+        { "nombre": "Mix de achuras", "precio": "$39.000", "descripcion": "Chorizo, morcilla, molleja, chinchulín y riñón." },
+        { "nombre": "Provoleta", "precio": "$13.500" },
+        { "nombre": "Provoleta especial", "variantes": [
+          { "label": "Tomate y huevo frito", "precio": "$16.000" },
+          { "label": "Tomate y rúcula", "precio": "$16.000" }
+        ]},
+        { "nombre": "Rabas", "precio": "$24.000" },
+        { "nombre": "Patatas Bravas", "precio": "$9.500" },
+        { "nombre": "Buñuelos de espinaca", "precio": "$12.000" },
+        { "nombre": "Empanada de carne", "precio": "$4.000" },
+        { "nombre": "Nachos", "variantes": [
+          { "label": "Con queso cheddar", "precio": "$9.000" },
+          { "label": "Con espinaca y queso bechamel", "precio": "$9.000" }
+        ]},
+        { "nombre": "Mozzarellitas", "precio": "$12.000" }
+      ]
+    },
+
+    {
+      "id": "parrilla",
+      "nombre": "Parrilla",
+      "bajada": "Cortes argentinos al carbón, a punto justo. Para uno o para compartir.",
+      "imagen": "/imagenes/categorias-comidas/parrilla.jpg",
+      "items": [
+        { "nombre": "Asado", "variantes": [
+          { "label": "Porción", "precio": "$36.000" },
+          { "label": "½ Porción", "precio": "$23.000" }
+        ]},
+        { "nombre": "Vacío", "variantes": [
+          { "label": "Porción", "precio": "$39.000" },
+          { "label": "½ Porción", "precio": "$21.500" }
+        ]},
+        { "nombre": "Bife de Lomo", "variantes": [
+          { "label": "Porción", "precio": "$47.500" },
+          { "label": "½ Porción", "precio": "$26.500" }
+        ]},
+        { "nombre": "Bife de Chorizo", "variantes": [
+          { "label": "Porción", "precio": "$39.500" },
+          { "label": "½ Porción", "precio": "$26.500" }
+        ]},
+        { "nombre": "Bife de Chorizo Mariposa", "precio": "$47.000" },
+        { "nombre": "Ojo de Bife", "variantes": [
+          { "label": "Porción", "precio": "$52.500" },
+          { "label": "½ Porción", "precio": "$36.000" }
+        ]},
+        { "nombre": "Ojo de Bife Mariposa", "precio": "$58.500" },
+        { "nombre": "Entraña", "precio": "$49.000" },
+        { "nombre": "Bondiola", "precio": "$18.000" },
+        { "nombre": "Matambrito de Cerdo", "precio": "$25.000" },
+        { "nombre": "Matambrito de Cerdo a la Pizza", "precio": "$31.000" },
+        { "nombre": "Mix de Carne", "precio": "$54.000", "descripcion": "Asado, vacío y bondiola." },
+        { "nombre": "¼ Pollo", "precio": "$11.000" },
+        { "nombre": "Salmón", "precio": "$27.000", "dieta": ["tacc"] },
+        { "nombre": "Grillado de Vegetales", "precio": "$12.000", "dieta": ["vegano"] }
+      ]
+    },
+
+    {
+      "id": "guarniciones",
+      "nombre": "Guarniciones y Ensaladas",
+      "bajada": "Para acompañar la parrilla o como plato liviano.",
+      "imagen": "/imagenes/categorias-comidas/guarniciones.jpg",
+      "items": [
+        { "nombre": "Papas Fritas", "precio": "$10.000", "dieta": ["vegano"] },
+        { "nombre": "Batatas", "precio": "$11.000", "dieta": ["vegano"] },
+        { "nombre": "Batatas con Miel", "precio": "$12.000", "dieta": ["veggie"] },
+        { "nombre": "Puré de Papas", "precio": "$10.000", "dieta": ["veggie"] },
+        { "nombre": "Puré de Calabaza", "precio": "$10.000", "dieta": ["veggie"] },
+        { "nombre": "Huevo Frito", "precio": "$1.500", "dieta": ["veggie"] },
+        { "nombre": "Ensalada 3 Gustos", "precio": "$10.000", "descripcion": "Lechuga, rúcula, zanahoria, huevo, tomate, cebolla.", "dieta": ["veggie"] },
+        { "nombre": "Omelette Jamón y Queso", "precio": "$9.500" },
+        { "nombre": "Caesar", "precio": "$17.000", "descripcion": "Verdes, pollo rebozado, croutones, parmesano, aderezo." },
+        { "nombre": "Pacífico", "precio": "$19.000", "descripcion": "Mix de verdes, salmón ahumado, tomate, croutones y parmesano." },
+        { "nombre": "Atunada", "precio": "$17.000", "descripcion": "Mix de verdes, atún, huevo, zanahoria." },
+        { "nombre": "Poché", "precio": "$17.000", "descripcion": "Colchón de verdes sobre pan plano, parmesano, huevo poché y verduras grilladas." }
+      ]
+    },
+
+    {
+      "id": "minutas",
+      "nombre": "Minutas",
+      "bajada": "Milanesas y supremas de la casa.",
+      "imagen": "/imagenes/categorias-comidas/minutas.jpg",
+      "items": [
+        { "nombre": "Milanesa de Ternera", "precio": "$18.000" },
+        { "nombre": "Milanesa de Peceto", "precio": "$18.000" },
+        { "nombre": "Milanesa Napolitana", "precio": "$22.500" },
+        { "nombre": "Milanesa Suiza", "precio": "$22.500" },
+        { "nombre": "Milanesa de Soja", "precio": "$16.000", "dieta": ["vegano"] },
+        { "nombre": "Suprema de Pollo", "precio": "$18.000" },
+        { "nombre": "Suprema de Pollo a la Napolitana", "precio": "$22.500" },
+        { "nombre": "Revuelto Gramajo NTS", "precio": "$12.000" },
+        { "nombre": "Tortilla de Papa", "precio": "$12.000", "dieta": ["veggie"] }
+      ]
+    },
+
+    {
+      "id": "especiales",
+      "nombre": "Especiales",
+      "bajada": "Lo que no aparece todos los días — pedilos antes que se vuelen.",
+      "imagen": "/imagenes/categorias-comidas/especiales.jpg",
+      "items": [
+        { "nombre": "Bife de Chorizo NTS para Compartir", "precio": "$59.000", "descripcion": "Relleno de jamón y queso, con papas fritas a caballo." },
+        { "nombre": "Ribs de Cerdo a la Barbacoa con Guarnición", "precio": "$25.000" },
+        { "nombre": "Matambre de Ternera a la Pizza con Guarnición para Compartir", "precio": "$39.000" },
+        { "nombre": "Costillar para Compartir", "tag": "Vie · Sáb · Dom", "variantes": [
+          { "label": "Porción", "precio": "$49.500" },
+          { "label": "½ Porción", "precio": "$28.500" }
+        ]}
+      ]
+    },
+
+    {
+      "id": "sandwiches",
+      "nombre": "Sandwiches",
+      "bajada": "Todos salen con fritas.",
+      "imagen": "/imagenes/categorias-comidas/sandwiches.jpg",
+      "items": [
+        { "nombre": "Hamburguesa Casera", "precio": "$12.500" },
+        { "nombre": "Hamburguesa Casera Completa", "precio": "$16.500" },
+        { "nombre": "Paty", "precio": "$11.000" },
+        { "nombre": "Paty Completo", "precio": "$14.000" },
+        { "nombre": "Sandwich de Vacío", "precio": "$24.000" },
+        { "nombre": "Sandwich de Bondiola", "precio": "$16.000" },
+        { "nombre": "Sandwich de Mollejas", "precio": "$26.000" },
+        { "nombre": "Sandwich de Lomito", "precio": "$25.000" },
+        { "nombre": "Lomito Completo", "precio": "$29.500" },
+        { "nombre": "Choripán", "precio": "$10.000" }
+      ]
+    },
+
+    {
+      "id": "pastas",
+      "nombre": "Pastas",
+      "bajada": "Pastas caseras al fierrito y sus salsas.",
+      "imagen": "/imagenes/categorias-comidas/pastas.jpg",
+      "items": [
+        { "nombre": "Fusilli al Fierrito", "precio": "$15.000", "dieta": ["veggie"] },
+        { "nombre": "Ravioles de Ricota", "precio": "$17.000", "dieta": ["veggie"] },
+        { "nombre": "Ravioles de Verdura y Pollo", "precio": "$17.000" },
+        { "nombre": "Sorrentinos de Jamón y Queso", "precio": "$18.000" },
+        { "nombre": "Ñoquis", "precio": "$14.000", "dieta": ["veggie"] },
+        { "nombre": "Spaghetti", "precio": "$13.000", "dieta": ["veggie"] },
+        { "nombre": "Salsas", "variantes": [
+          { "label": "Filetto", "precio": "$3.000" },
+          { "label": "Bolognesa", "precio": "$4.000" },
+          { "label": "Rosa", "precio": "$3.000" },
+          { "label": "4 Quesos", "precio": "$4.000" },
+          { "label": "Mediterránea (tomate, albahaca, aceituna)", "precio": "$3.500" }
+        ]}
+      ]
+    },
+
+    {
+      "id": "bebidas",
+      "nombre": "Bebidas y Cervezas",
+      "bajada": "Para acompañar.",
+      "imagen": "/imagenes/categorias-comidas/bebidas.jpg",
+      "items": [
+        { "nombre": "Línea Coca Cola", "precio": "$4.500" },
+        { "nombre": "Agua", "precio": "$4.000" },
+        { "nombre": "Sifón 650 cc", "precio": "$4.000" },
+        { "nombre": "Agua Saborizada", "precio": "$4.500" },
+        { "nombre": "Jugo de Naranja", "precio": "$4.500" },
+        { "nombre": "Granadina con Soda", "precio": "$5.000" },
+        { "nombre": "Limonada", "precio": "$4.000" },
+        { "nombre": "Jarra de Limonada", "precio": "$9.000" },
+        { "nombre": "Patagonia", "variantes": [
+          { "label": "740 cc", "precio": "$11.500" },
+          { "label": "355 cc", "precio": "$6.500" }
+        ]},
+        { "nombre": "Stella Artois", "variantes": [
+          { "label": "1 litro", "precio": "$11.000" },
+          { "label": "330 cc", "precio": "$6.000" }
+        ]},
+        { "nombre": "Stella Artois 0.0%", "descripcion": "Sin alcohol.", "variantes": [
+          { "label": "330 cc", "precio": "$5.500" }
+        ]},
+        { "nombre": "Chopp Stella Artois", "variantes": [
+          { "label": "330 cc", "precio": "$6.000" },
+          { "label": "500 cc", "precio": "$7.500" }
+        ]},
+        { "nombre": "Corona", "variantes": [
+          { "label": "710 cc", "precio": "$11.500" },
+          { "label": "355 cc", "precio": "$6.500" }
+        ]}
+      ]
+    },
+
+    {
+      "id": "postres",
+      "nombre": "Postres",
+      "bajada": "El cierre dulce — clásicos de parrilla y especialidades de la casa.",
+      "imagen": "/imagenes/categorias-comidas/postres.jpeg",
+      "items": [
+        { "nombre": "No tan Santos", "precio": "$19.000" },
+        { "nombre": "Flan", "precio": "$7.000" },
+        { "nombre": "Queso y Dulce", "precio": "$8.000" },
+        { "nombre": "Panqueque de Dulce de Leche", "precio": "$8.000" },
+        { "nombre": "Mousse", "precio": "$9.000" },
+        { "nombre": "Tiramisú", "precio": "$8.500" },
+        { "nombre": "Chocotorta NTS", "precio": "$8.500" },
+        { "nombre": "Budín de Pan", "precio": "$7.000" },
+        { "nombre": "Brownie con Helado", "precio": "$10.500" },
+        { "nombre": "Helado", "precio": "$8.000" },
+        { "nombre": "Degustación", "precio": "$19.000" },
+        { "nombre": "Adicional Dulce de Leche", "precio": "$1.500" },
+        { "nombre": "Adicional Crema", "precio": "$1.500" }
+      ]
+    },
+
+    {
+      "id": "cafe",
+      "nombre": "Café",
+      "bajada": "Para el cierre o el medio de la tarde.",
+      "imagen": "/imagenes/categorias-comidas/cafeteria.jpg",
+      "items": [
+        { "nombre": "Café", "precio": "$4.000" },
+        { "nombre": "Americano", "precio": "$4.500" },
+        { "nombre": "Café con Leche", "precio": "$5.500" },
+        { "nombre": "Té", "precio": "$4.000" },
+        { "nombre": "Submarino", "precio": "$6.000" }
+      ],
+      "submenu": {
+        "titulo": "— Para acompañar —",
+        "items": [
+          { "nombre": "Tostado de Jamón y Queso", "precio": "$6.500" },
+          { "nombre": "Tostadas con Queso y Dulce de Leche", "precio": "$1.200" }
+        ]
+      }
+    }
+  ],
+
+  "vinos_y_tragos": {
+    "bajada": "Bodegas argentinas, espumantes, cócteles, tragos y vinos por copa. Tocá una tarjeta para abrir su carta.",
+    "tarjetas": [
+      {
+        "id": "catena",
+        "nombre": "Catena Zapata",
+        "imagen": "/imagenes/categorias-vinos/catena-zapata.jpg",
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "Angélica Zapata Malbec Alta", "precio": "$43.000" },
+            { "nombre": "Angélica Zapata Cabernet Franc Alta", "precio": "$39.000" },
+            { "nombre": "D.V. Catena Malbec-Cabernet", "precio": "$25.000" },
+            { "nombre": "Saint Felicien Malbec", "precio": "$19.000" },
+            { "nombre": "Saint Felicien Cabernet", "precio": "$19.000" },
+            { "nombre": "Saint Felicien Cabernet Franc", "precio": "$19.000" },
+            { "nombre": "Álamos Malbec", "precio": "$14.000" },
+            { "nombre": "Álamos Cabernet", "precio": "$14.000" }
+          ]},
+          { "tipo": "Blancos", "items": [
+            { "nombre": "D.V. Catena Chardonnay", "precio": "$29.000" },
+            { "nombre": "Saint Felicien Chardonnay", "precio": "$19.000" },
+            { "nombre": "Álamos Sauvignon Blanc", "precio": "$14.000" },
+            { "nombre": "Álamos Chardonnay", "precio": "$14.000" }
+          ]}
+        ]
+      },
+      {
+        "id": "luigi",
+        "nombre": "Luigi Bosca",
+        "imagen": "/imagenes/categorias-vinos/luigi-bosca.jpg",
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "Luigi Bosca de Sangre Malbec DOC", "precio": "$42.000" },
+            { "nombre": "Luigi Bosca Malbec", "precio": "$26.000" },
+            { "nombre": "Luigi Bosca Cabernet", "precio": "$26.000" },
+            { "nombre": "Finca La Linda Malbec", "precio": "$17.000" },
+            { "nombre": "Finca La Linda Cabernet", "precio": "$17.000" }
+          ]},
+          { "tipo": "Rosados", "items": [
+            { "nombre": "Luigi Bosca Rosé", "precio": "$28.500" }
+          ]},
+          { "tipo": "Blancos", "items": [
+            { "nombre": "Luigi Bosca Chardonnay", "precio": "$26.000" },
+            { "nombre": "Finca La Linda Chardonnay", "precio": "$17.000" }
+          ]}
+        ]
+      },
+      {
+        "id": "nieto",
+        "nombre": "Nieto Senetiner",
+        "imagen": "/imagenes/categorias-vinos/nieto-senetiner.jpg",
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "Don Nicanor Malbec", "precio": "$21.000" },
+            { "nombre": "Don Nicanor Cabernet", "precio": "$21.000" },
+            { "nombre": "Reserva Malbec DOC", "precio": "$16.000" },
+            { "nombre": "NS Blend Collection MK · Cab Franc · P. Verdot", "precio": "$12.500" },
+            { "nombre": "Nieto Senetiner Malbec", "variantes": [
+              { "label": "750cc", "precio": "$12.500" },
+              { "label": "375cc", "precio": "$8.000" }
+            ]},
+            { "nombre": "Nieto Senetiner Cabernet", "precio": "$12.500" },
+            { "nombre": "Nieto Senetiner Pinot Noir", "precio": "$12.500" },
+            { "nombre": "Nieto Senetiner Bonarda", "precio": "$12.500" },
+            { "nombre": "Emilia Malbec", "precio": "$10.000" },
+            { "nombre": "Emilia Cabernet", "precio": "$10.000" },
+            { "nombre": "Benjamín Nieto Malbec", "variantes": [
+              { "label": "750cc", "precio": "$7.500" },
+              { "label": "375cc", "precio": "$5.500" }
+            ]},
+            { "nombre": "Benjamín Nieto Cabernet", "precio": "$7.500" }
+          ]},
+          { "tipo": "Rosados", "items": [
+            { "nombre": "Nieto Senetiner Rosé", "precio": "$12.500" }
+          ]},
+          { "tipo": "Blancos", "items": [
+            { "nombre": "Nieto Senetiner Chardonnay", "precio": "$12.500" },
+            { "nombre": "Emilia Chardonnay", "precio": "$10.000" },
+            { "nombre": "Benjamín Nieto Chardonnay", "precio": "$7.500" }
+          ]},
+          { "tipo": "Dulces", "items": [
+            { "nombre": "Emilia Dulce", "precio": "$10.000" }
+          ]}
+        ]
+      },
+      {
+        "id": "ruca",
+        "nombre": "Ruca Malen",
+        "imagen": "/imagenes/categorias-vinos/ruca-malen.jpg",
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "Capítulo 2 Malbec", "precio": "$22.000" },
+            { "nombre": "Capítulo 2 Cabernet Franc", "precio": "$22.000" },
+            { "nombre": "Capítulo 2 Pinot Noir", "precio": "$22.000" },
+            { "nombre": "Capítulo 1 Malbec", "precio": "$12.500" },
+            { "nombre": "Capítulo 1 Cabernet", "precio": "$12.500" }
+          ]},
+          { "tipo": "Blancos", "items": [
+            { "nombre": "Capítulo 1 Chardonnay", "precio": "$12.500" }
+          ]}
+        ]
+      },
+      {
+        "id": "cobos",
+        "nombre": "Viña Cobos",
+        "imagen": "/imagenes/categorias-vinos/vina-cobos.jpg",
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "Bramare Malbec", "precio": "$60.000" },
+            { "nombre": "Cocodrilo Malbec", "precio": "$50.000" },
+            { "nombre": "Felino Malbec", "precio": "$29.000" },
+            { "nombre": "Felinos Cabernet", "precio": "$29.000" }
+          ]},
+          { "tipo": "Blancos", "items": [
+            { "nombre": "Felino Chardonnay", "precio": "$29.000" }
+          ]}
+        ]
+      },
+      {
+        "id": "cadus",
+        "nombre": "Cadus",
+        "imagen": "/imagenes/categorias-vinos/cadus.jpg",
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "CD App Malbec", "precio": "$35.000" }
+          ]}
+        ]
+      },
+      {
+        "id": "lasmoras",
+        "nombre": "Finca Las Moras",
+        "imagen": "/imagenes/categorias-vinos/las-moras.png",
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "Los Intocables Malbec", "precio": "$14.000" },
+            { "nombre": "Alma Mora Malbec", "precio": "$9.500" },
+            { "nombre": "Alma Mora Cabernet", "precio": "$9.500" }
+          ]},
+          { "tipo": "Rosados", "items": [
+            { "nombre": "Alma Mora Rosado", "precio": "$9.500" }
+          ]},
+          { "tipo": "Blancos", "items": [
+            { "nombre": "Alma Mora Chardonnay", "precio": "$9.500" }
+          ]}
+        ]
+      },
+      {
+        "id": "huberto",
+        "nombre": "San Huberto",
+        "imagen": "/imagenes/categorias-vinos/san-huberto.jpg",
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "Gran Nina Malbec", "precio": "$22.000" },
+            { "nombre": "Gran Nina Petit Verdot", "precio": "$22.000" },
+            { "nombre": "Gran Nina Cabernet Franc", "precio": "$22.000" },
+            { "nombre": "Roble Malbec", "precio": "$8.000" },
+            { "nombre": "Roble Cabernet", "precio": "$8.000" },
+            { "nombre": "Roble Merlot", "precio": "$8.000" },
+            { "nombre": "Malbec", "precio": "$7.000" },
+            { "nombre": "Cabernet", "precio": "$7.000" }
+          ]},
+          { "tipo": "Blancos", "items": [
+            { "nombre": "Roble Chardonnay", "precio": "$8.000" },
+            { "nombre": "Chardonnay", "precio": "$7.000" }
+          ]},
+          { "tipo": "Dulces", "items": [
+            { "nombre": "Nina Malbec Dulce Natural", "precio": "$14.000" }
+          ]}
+        ]
+      },
+      {
+        "id": "trapiche",
+        "nombre": "Trapiche",
+        "imagen": "/imagenes/categorias-vinos/trapiche.jpg",
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "Trapiche Reserva Malbec", "precio": "$15.000" }
+          ]}
+        ]
+      },
+      {
+        "id": "espumantes",
+        "nombre": "Espumantes",
+        "imagen": "/imagenes/categorias-vinos/espumantes.png",
+        "grupos": [
+          { "tipo": "Espumantes", "items": [
+            { "nombre": "Saint Felicien Nature", "precio": "$28.000" },
+            { "nombre": "Luigi Bosca", "precio": "$32.000" },
+            { "nombre": "Nieto Senetiner Brut Nature", "precio": "$20.000" },
+            { "nombre": "Nieto Senetiner Extra Brut", "precio": "$18.000" },
+            { "nombre": "Emilia Espumante", "precio": "$14.500" }
+          ]}
+        ]
+      },
+      {
+        "id": "emilia",
+        "nombre": "Cocktails Emilia",
+        "imagen": "/imagenes/categorias-vinos/emilia-cocktail.jpeg",
+        "grupos": [
+          { "tipo": "Cocktails", "items": [
+            { "nombre": "Cocktail Emilia Clarea", "precio": "$11.000" },
+            { "nombre": "Cocktail Emilia Rosé", "precio": "$11.000" },
+            { "nombre": "Cocktail Emilia Sangría", "precio": "$11.000" },
+            { "nombre": "Cocktail Emilia Spritz", "precio": "$11.000" }
+          ]}
+        ]
+      },
+      {
+        "id": "tragos",
+        "nombre": "Tragos",
+        "imagen": "/imagenes/categorias-vinos/tragos.jpg",
+        "grupos": [
+          { "tipo": "Aperitivos y vermouths", "items": [
+            { "nombre": "Campari con Naranja", "precio": "$7.000" },
+            { "nombre": "Campari Tonic", "precio": "$7.000" },
+            { "nombre": "Cynar", "precio": "$7.000" },
+            { "nombre": "Martini", "precio": "$7.000" },
+            { "nombre": "Cinzano", "precio": "$7.000" },
+            { "nombre": "Fernet con Coca", "precio": "$7.000" }
+          ]},
+          { "tipo": "Cocktails clásicos", "items": [
+            { "nombre": "Negroni", "precio": "$8.500" },
+            { "nombre": "Aperol Spritz", "precio": "$8.500" },
+            { "nombre": "Mojito", "precio": "$8.000" },
+            { "nombre": "Daikiri Maracuyá", "precio": "$8.000" },
+            { "nombre": "Cuba Libre", "precio": "$8.000" },
+            { "nombre": "Caipiroska", "precio": "$7.500" },
+            { "nombre": "Limonada Mareada", "precio": "$7.000" },
+            { "nombre": "Jarra de Sangría", "precio": "$10.500" }
+          ]},
+          { "tipo": "Whiskies", "items": [
+            { "nombre": "Whisky JB", "precio": "$4.500" },
+            { "nombre": "Whisky JW Red Label", "variantes": [
+              { "label": "Medida", "precio": "$6.000" },
+              { "label": "Botella", "precio": "$45.000" }
+            ]},
+            { "nombre": "Whisky JW Black Label", "variantes": [
+              { "label": "Medida", "precio": "$9.000" },
+              { "label": "Botella", "precio": "$90.000" }
+            ]},
+            { "nombre": "Whisky JW Double Black", "precio": "$10.000" },
+            { "nombre": "Whisky JW Blue Label", "precio": "$45.000" }
+          ]},
+          { "tipo": "Vodkas, gins y otros", "items": [
+            { "nombre": "Vodka", "precio": "$7.000" },
+            { "nombre": "Vodka Absolut", "precio": "$9.000" },
+            { "nombre": "Gin", "precio": "$7.500" },
+            { "nombre": "Gin con Frutos Rojos", "precio": "$8.000" },
+            { "nombre": "Gin Beefeater", "precio": "$9.000" },
+            { "nombre": "Tequila", "precio": "$5.000" },
+            { "nombre": "Sambuca", "precio": "$4.500" },
+            { "nombre": "Baileys", "precio": "$8.000" },
+            { "nombre": "Tía María", "precio": "$6.500" }
+          ]}
+        ]
+      },
+      {
+        "id": "copa",
+        "nombre": "Vino por Copa",
+        "imagen": "/imagenes/home/copa-vino-pitcher.jpg",
+        "wide": true,
+        "grupos": [
+          { "tipo": "Tintos", "items": [
+            { "nombre": "Felinos Malbec", "precio": "$11.000", "descripcion": "Viña Cobos" },
+            { "nombre": "Don Nicanor Malbec", "precio": "$8.000", "descripcion": "Nieto Senetiner" },
+            { "nombre": "Álamos Malbec", "precio": "$5.000", "descripcion": "Catena Zapata" },
+            { "nombre": "Capítulo 1 Malbec", "precio": "$5.000", "descripcion": "Ruca Malen" },
+            { "nombre": "Nieto Senetiner", "precio": "$5.000", "descripcion": "Bodega Nieto Senetiner" },
+            { "nombre": "Nina Gold Petit Verdot", "precio": "$4.000", "descripcion": "San Huberto" },
+            { "nombre": "San Huberto", "precio": "$3.500", "descripcion": "Bodega San Huberto" }
+          ]},
+          { "tipo": "Espumante", "items": [
+            { "nombre": "Copa de Espumante", "precio": "$2.500" }
+          ]}
+        ]
+      }
+    ]
+  }
+}

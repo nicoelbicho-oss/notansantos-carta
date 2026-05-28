@@ -14,11 +14,16 @@ menu-landing.jpg
 # Playwright temp
 .playwright-mcp/
 
-# Sistema operativo
-Thumbs.db
+# Node / Astro
+node_modules/
+dist/
+.astro/
+.vercel/
+*.log
 .DS_Store
 
-# Editores
+# Sistema operativo / editores
+Thumbs.db
 .vscode/
 .idea/
 *.swp

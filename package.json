@@ -1,0 +1,15 @@
+{
+  "name": "notansantos-carta",
+  "version": "1.0.0",
+  "description": "Carta digital de No Tan Santos — Parrilla | Bar — Club Social",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.14.0"
+  }
+}

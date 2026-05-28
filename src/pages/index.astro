@@ -1,0 +1,286 @@
+---
+import menu from '../data/menu.json';
+import config from '../data/config.json';
+import Item from '../components/Item.astro';
+import Leyenda from '../components/Leyenda.astro';
+import '../styles/global.css';
+
+// Para cada sección de comida, calcular qué dietas aparecen (para mostrar leyenda)
+function dietasUsadas(items: any[]): string[] {
+  const set = new Set<string>();
+  items.forEach(i => (i.dieta ?? []).forEach((d: string) => set.add(d)));
+  return Array.from(set);
+}
+
+// Agrupar las tarjetas de vinos en filas (2 por fila, salvo las wide que van solas full-width)
+const tarjetas = menu.vinos_y_tragos.tarjetas;
+type Fila = { wide: boolean; cards: typeof tarjetas };
+const filas: Fila[] = [];
+let i = 0;
+while (i < tarjetas.length) {
+  const card: any = tarjetas[i];
+  if (card.wide) {
+    filas.push({ wide: true, cards: [card] });
+    i++;
+  } else {
+    const next: any = tarjetas[i + 1];
+    if (next && !next.wide) {
+      filas.push({ wide: false, cards: [card, next] });
+      i += 2;
+    } else {
+      filas.push({ wide: false, cards: [card] });
+      i++;
+    }
+  }
+}
+
+const wa = (num: string, text = '') =>
+  `https://api.whatsapp.com/send?phone=${num}${text ? `&text=${encodeURIComponent(text)}` : ''}`;
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a1410" />
+  <title>{config.restaurante} — Carta</title>
+  <meta name="description" content={`Carta digital de ${config.restaurante} — ${config.subtitulo}.`} />
+
+  <!-- Open Graph para compartir por WhatsApp / redes -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={`${config.restaurante} — Carta`} />
+  <meta property="og:description" content={`${config.subtitulo}. Mirá la carta.`} />
+  <meta property="og:image" content="/imagenes/home/mosaico-comidas.jpeg" />
+
+  <!-- Apple touch icon (cuando agregás a la pantalla de inicio del celu) -->
+  <link rel="apple-touch-icon" href="/referencias/logo.png.png" />
+  <link rel="icon" href="/referencias/logo.png.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Italianno&family=Bebas+Neue&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============ SPLASH ============ -->
+  <section class="splash">
+    <div class="splash-top">
+      <img src="/referencias/logo.png.png" alt={config.restaurante} class="logo" />
+    </div>
+    <div class="splash-mid">
+      <div class="splash-kicker">Bienvenidos</div>
+      <h1 class="splash-title">Mirá la carta</h1>
+    </div>
+    <div class="splash-bottom">
+      <a href="#entradas" class="cta">Ver la carta</a>
+      <div class="splash-footer">
+        {config.sucursales.map(s => (
+          <a href={wa(s.whatsapp)} target="_blank" rel="noopener">WhatsApp {s.nombre.split(' ')[0]}</a>
+        ))}
+        <a href={config.instagram.url} target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CUBIERTO ============ -->
+  <div class="cubierto">
+    VALOR DEL CUBIERTO &nbsp;·&nbsp; {menu.cubierto}
+  </div>
+
+  <!-- ============ SECCIONES DE COMIDAS ============ -->
+  {menu.comidas.map((seccion: any) => (
+    <section class="section" id={seccion.id}>
+      <h2 class="section-title">{seccion.nombre}</h2>
+      {seccion.bajada && <p class="section-desc">{seccion.bajada}</p>}
+      {seccion.imagen && <img src={seccion.imagen} alt="" class="section-image" loading="lazy" />}
+
+      <div class="items">
+        {seccion.items.map((item: any) => <Item item={item} />)}
+      </div>
+
+      {seccion.submenu && (
+        <>
+          <div class="submenu-titulo">{seccion.submenu.titulo}</div>
+          <div class="items">
+            {seccion.submenu.items.map((item: any) => <Item item={item} />)}
+          </div>
+        </>
+      )}
+
+      <Leyenda dietas={dietasUsadas([
+        ...seccion.items,
+        ...(seccion.submenu?.items ?? [])
+      ])} />
+    </section>
+  ))}
+
+  <!-- ============ INTERLUDIO DE LA VIRGEN ============ -->
+  <div class="virgen-interlude"></div>
+
+  <!-- ============ VINOS Y TRAGOS ============ -->
+  <section class="section" id="vinos">
+    <h2 class="section-title">Vinos y Tragos</h2>
+    <p class="section-desc">{menu.vinos_y_tragos.bajada}</p>
+
+    <div class="bodegas">
+      {filas.map((fila) => (
+        <>
+          <div class={fila.wide ? 'bodegas-row full' : 'bodegas-row'}>
+            {fila.cards.map((c: any) => (
+              <button
+                class={c.wide ? 'bodega-card wide' : 'bodega-card'}
+                data-target={c.id}
+                aria-controls={`bod-${c.id}`}
+                aria-expanded="false"
+                type="button"
+              >
+                <img src={c.imagen} alt="" loading="lazy" />
+                <span class="bodega-card-chevron">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+                <span class="bodega-card-name">{c.nombre}</span>
+              </button>
+            ))}
+          </div>
+          {fila.cards.map((c: any) => (
+            <div class="bodega-panel" id={`bod-${c.id}`}>
+              {c.grupos.map((grupo: any) => (
+                <>
+                  <div class="bodega-tipo">{grupo.tipo}</div>
+                  <div class="items">
+                    {grupo.items.map((it: any) => <Item item={it} />)}
+                  </div>
+                </>
+              ))}
+            </div>
+          ))}
+        </>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="/referencias/logo.png.png" alt={config.restaurante} class="footer-logo" />
+
+      <div class="footer-sucursales">
+        {config.sucursales.map(s => (
+          <div class="footer-sucursal">
+            <div class="footer-sucursal-nombre">{s.nombre}</div>
+            <div class="footer-sucursal-dir">
+              <a href={s.mapsUrl} target="_blank" rel="noopener">{s.direccion}</a>
+            </div>
+            <div class="footer-sucursal-acciones">
+              <a class="footer-btn" href={`tel:${s.telefono.replace(/\s/g, '')}`}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+                Llamar
+              </a>
+              <a class="footer-btn" href={wa(s.whatsapp)} target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.5 0 .17 5.33.17 11.87c0 2.1.55 4.15 1.6 5.95L0 24l6.33-1.66a11.86 11.86 0 0 0 5.7 1.45h.01c6.55 0 11.87-5.33 11.87-11.87 0-3.17-1.23-6.15-3.39-8.44zM12.05 21.79h-.01a9.92 9.92 0 0 1-5.05-1.38l-.36-.22-3.76.99 1-3.66-.24-.38a9.9 9.9 0 0 1-1.52-5.27c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.02 2.91a9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.92-9.92 9.92zm5.44-7.43c-.3-.15-1.76-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01s-.52.07-.8.37c-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                WhatsApp
+              </a>
+              <a class="footer-btn" href={s.mapsUrl} target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Cómo llegar
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="footer-social">
+        <a href={config.instagram.url} target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          {config.instagram.handle}
+        </a>
+      </div>
+
+      <p class="footer-aviso">{config.avisoLegal}</p>
+    </div>
+  </footer>
+
+  <!-- ============ FAB + DRAWER ============ -->
+  <button class="fab" id="fab" aria-label="Saltar a sección" type="button">
+    <span class="fab-label">Saltar a…</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="6" x2="20" y2="6"/>
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <line x1="4" y1="18" x2="20" y2="18"/>
+    </svg>
+  </button>
+
+  <div class="backdrop" id="backdrop"></div>
+
+  <nav class="drawer" id="drawer" aria-label="Secciones">
+    <div class="drawer-handle"></div>
+    <button class="drawer-close" id="drawerClose" aria-label="Cerrar" type="button">✕</button>
+    <h3 class="drawer-title">Saltar a…</h3>
+
+    <div class="drawer-group">
+      <div class="drawer-group-title">— COMIDAS —</div>
+      <div class="drawer-list">
+        {menu.comidas.map((s: any) => (
+          <a href={`#${s.id}`}>{s.nombre}</a>
+        ))}
+      </div>
+    </div>
+
+    <div class="drawer-group">
+      <div class="drawer-group-title">— VINOS Y TRAGOS —</div>
+      <div class="drawer-list">
+        <a href="#vinos">Ver bodegas</a>
+      </div>
+    </div>
+  </nav>
+
+  <script is:inline>
+    // === Drawer (botón flotante) ===
+    const fab = document.getElementById('fab');
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.getElementById('backdrop');
+    const close = document.getElementById('drawerClose');
+
+    function openDrawer() { drawer.classList.add('open'); backdrop.classList.add('open'); }
+    function shutDrawer() { drawer.classList.remove('open'); backdrop.classList.remove('open'); }
+
+    fab.addEventListener('click', openDrawer);
+    backdrop.addEventListener('click', shutDrawer);
+    close.addEventListener('click', shutDrawer);
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', shutDrawer));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') shutDrawer(); });
+
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    // === Acordeón de bodegas ===
+    document.querySelectorAll('.bodega-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const target = card.dataset.target;
+        const panel = document.getElementById('bod-' + target);
+        const wasOpen = panel.classList.contains('open');
+
+        document.querySelectorAll('.bodega-panel.open').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.bodega-card.open').forEach(c => {
+          c.classList.remove('open');
+          c.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!wasOpen) {
+          panel.classList.add('open');
+          card.classList.add('open');
+          card.setAttribute('aria-expanded', 'true');
+          setTimeout(() => {
+            const rect = card.getBoundingClientRect();
+            const offset = window.pageYOffset + rect.top - 80;
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }, 150);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
