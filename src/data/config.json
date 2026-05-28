@@ -11,16 +11,17 @@
       "direccion": "Núñez 1650, CABA",
       "telefono": "+54 11 2065 4723",
       "whatsapp": "5491153075145",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=N%C3%BA%C3%B1ez+1650+CABA"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=N%C3%BA%C3%B1ez+1650+CABA",
+      "horarios": "Todos los días · 10:00 a 00:00"
     },
     {
       "nombre": "Donado (DOHO)",
       "direccion": "La Pampa 4279, CABA",
       "telefono": "+54 11 4556 1472",
       "whatsapp": "5491169014444",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=La+Pampa+4279+CABA"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=La+Pampa+4279+CABA",
+      "horarios": "Todos los días · 10:00 a 00:00"
     }
   ],
-  "horarios": null,
   "avisoLegal": "Precios finales con IVA incluido. Si tenés alergias o intolerancias, avisá al mozo."
 }

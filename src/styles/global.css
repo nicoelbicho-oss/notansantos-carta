@@ -397,9 +397,16 @@ body { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 
   font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
   color: var(--ink);
-  margin-bottom: 14px;
+  margin-bottom: 6px;
 }
 .footer-sucursal-dir a { color: inherit; text-decoration: underline; text-decoration-color: var(--gold-dim, #8a6f4d); }
+.footer-sucursal-horarios {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
 .footer-sucursal-acciones {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
 }
