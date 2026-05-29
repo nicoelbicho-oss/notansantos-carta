@@ -14,20 +14,20 @@
         { "nombre": "Riñón", "precio": "$11.000" },
         { "nombre": "Chinchulines", "precio": "$11.000" },
         { "nombre": "Mix de achuras", "precio": "$39.000", "descripcion": "Chorizo, morcilla, molleja, chinchulín y riñón." },
-        { "nombre": "Provoleta", "precio": "$13.500" },
-        { "nombre": "Provoleta especial", "variantes": [
+        { "nombre": "Provoleta", "precio": "$13.500", "dieta": ["veggie"] },
+        { "nombre": "Provoleta especial", "dieta": ["veggie"], "variantes": [
           { "label": "Tomate y huevo frito", "precio": "$16.000" },
           { "label": "Tomate y rúcula", "precio": "$16.000" }
         ]},
         { "nombre": "Rabas", "precio": "$24.000" },
-        { "nombre": "Patatas Bravas", "precio": "$9.500" },
-        { "nombre": "Buñuelos de espinaca", "precio": "$12.000" },
+        { "nombre": "Patatas Bravas", "precio": "$9.500", "dieta": ["veggie"] },
+        { "nombre": "Buñuelos de espinaca", "precio": "$12.000", "dieta": ["veggie"] },
         { "nombre": "Empanada de carne", "precio": "$4.000" },
-        { "nombre": "Nachos", "variantes": [
+        { "nombre": "Nachos", "dieta": ["veggie"], "variantes": [
           { "label": "Con queso cheddar", "precio": "$9.000" },
           { "label": "Con espinaca y queso bechamel", "precio": "$9.000" }
         ]},
-        { "nombre": "Mozzarellitas", "precio": "$12.000" }
+        { "nombre": "Mozzarellitas", "precio": "$12.000", "dieta": ["veggie"] }
       ]
     },
 
